@@ -16,4 +16,9 @@ describe('BackstagePass', () => {
     backstagePass.getPriceByday(4);
     expect(backstagePass.getPrice()).toEqual(12);
   });
+  it('should quality increase 3 point when days in 0 to 5', () => {
+    const backstagePass = new BackstagePass(13, 10);
+    backstagePass.getPriceByday(12);
+    expect(backstagePass.getPrice()).toEqual(32);
+  });
 });
