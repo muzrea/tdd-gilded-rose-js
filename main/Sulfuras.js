@@ -1,7 +1,11 @@
 import Product from './Product';
 
 export default class Sulfuras extends Product {
-  getPrice() {
+  getPriceByday() {
     return this.quality;
+  }
+
+  getPrice() {
+    return super.getPrice();
   }
 }
