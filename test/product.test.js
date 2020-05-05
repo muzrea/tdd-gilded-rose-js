@@ -4,7 +4,7 @@ describe('Product', () => {
   it('Product class should have SellIn and Quality properties', () => {
     const product = new Product(3, 12);
     expect(product.sellIn).toEqual(3);
-    expect(product.quality).toEqual(12);
+    expect(product.getPrice()).toEqual(12);
   });
   it('should Quality be 0 when set Quality less than 0', () => {
     const product = new Product(3, -1);
@@ -16,10 +16,12 @@ describe('Product', () => {
   });
   it('should Quality be decreased when time is going', () => {
     const product = new Product(3, 10);
-    expect(product.getPrice(2)).toEqual(8);
+    expect(product.getPriceByday(2)).toEqual(8);
+    expect(product.getPrice()).toEqual(8);
   });
   it('should Quality be decreased double than in sellIn when time is going', () => {
     const product = new Product(3, 16);
-    expect(product.getPrice(5)).toEqual(9);
+    expect(product.getPriceByday(5)).toEqual(9);
+    expect(product.getPrice()).toEqual(9);
   });
 });
