@@ -21,4 +21,9 @@ describe('BackstagePass', () => {
     backstagePass.getPriceByday(12);
     expect(backstagePass.getPrice()).toEqual(32);
   });
+  it('should quality to be 0 when days more than sellIn', () => {
+    const backstagePass = new BackstagePass(13, 10);
+    backstagePass.getPriceByday(14);
+    expect(backstagePass.getPrice()).toEqual(0);
+  });
 });

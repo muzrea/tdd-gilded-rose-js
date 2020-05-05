@@ -12,6 +12,9 @@ export default class Sulfuras extends Product {
     if (countDownTime <= 5 && countDownTime > 0) {
       this.quality = this.quality + 10 + (days - (this.sellIn - 5)) * 3;
     }
+    if (countDownTime <= 0) {
+      this.quality = 0;
+    }
     return this.quality;
   }
 
