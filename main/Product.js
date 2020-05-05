@@ -1,10 +1,16 @@
-'use Strict';
+export default class Product {
+  constructor(sellIn, quality) {
+    this.sellIn = sellIn;
+    this.quality = quality;
+  }
 
-class Product {
-  constructor(SellIn, Quality) {
-    this.SellIn = SellIn;
-    this.Quality = Quality;
+  getPrice() {
+    if (this.quality < 0) {
+      return 0;
+    }
+    if (this.quality > 50) {
+      return 50;
+    }
+    return this.quality;
   }
 }
-
-export default Product;
