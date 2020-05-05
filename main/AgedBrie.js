@@ -1,7 +1,12 @@
 import Product from './Product';
 
 export default class AgedBrie extends Product {
-  getPrice(days) {
-    return this.quality + days;
+  getPriceByday(days) {
+    this.quality = this.quality + days;
+    return this.quality;
+  }
+
+  getPrice() {
+    return super.getPrice();
   }
 }
