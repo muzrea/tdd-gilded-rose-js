@@ -14,4 +14,12 @@ describe('Product', () => {
     const product = new Product(3, 51);
     expect(product.getPrice()).toEqual(50);
   });
+  it('should Quality be decreased when time is going', () => {
+    const product = new Product(3, 10);
+    expect(product.getPrice(2)).toEqual(8);
+  });
+  it('should Quality be decreased double than in sellIn when time is going', () => {
+    const product = new Product(3, 16);
+    expect(product.getPrice(5)).toEqual(9);
+  });
 });
